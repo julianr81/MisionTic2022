@@ -1,0 +1,44 @@
+cadena = input()
+lista = []
+final = []
+
+i = 0
+contar = []
+for letra in (cadena):
+  if letra != ' ':
+    lista.append(letra)
+
+for letra in lista:
+  if i == 0:
+    final.append(lista[i])
+  else:
+    if letra != lista[i-1]:
+      final.append(letra)
+  i += 1
+
+for letra in final:
+  if letra not in contar:
+    contar.append(letra)
+  print(letra, end = ' ')
+
+print('')
+
+indice = 0
+conteo = 1
+for i in lista:
+  letra1 = lista[indice]
+  if indice + 1 < len(lista):
+    letra2 = lista[indice + 1]
+  else:
+    letra2 = '1'
+  
+  if letra1 == letra2:
+    if indice + 1 <= len(lista):
+      conteo += 1
+    else: print(conteo, end = ' ')
+  else:
+    print(conteo, end =' ')
+    conteo = 1
+    
+  indice += 1
+  

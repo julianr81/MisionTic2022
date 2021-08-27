@@ -1,0 +1,44 @@
+def categorias_repuestos(lista):
+  listado = []
+  for i in lista:
+    if i not in listado:
+      listado.append(i)
+  print(listado)  
+'''
+categorias_repuestos(["aceites","lubricantes","aceites", "mecánica", "sistema eléctrico"])
+'''
+def faltan_por_categoria(lista1, lista2, categoria):
+  faltan = []
+  for i in lista1:    
+    if lista2[i] == categoria:
+      faltan.append(i)
+  print(faltan)
+
+faltan_por_categoria([21, 10, 20, 5, 27, 33, 18, 4, 41, 31, 8, 12, 14, 34, 19, 2, 39, 35, 30],[4, 5, 6, 1, 6, 3, 5, 6, 2, 2, 6, 4, 6, 6, 5, 1, 3, 3, 5, 6, 6, 6, 6, 6, 5, 1, 1, 5, 6, 2, 4, 5, 3, 5, 5, 3, 4, 5, 6, 6, 3, 4],1)
+
+def repuesto_no_existe(bodega1, bodega2):
+  existen = []
+  for i in bodega1:
+    if i not in bodega2:
+      existen.append(i)
+  print(existen)
+
+'''
+repuesto_no_existe([12, 10, 13, 21, 25], [4, 10, 5, 12])
+'''
+def cambiar_repuestos(repuestos1, repuestos2):
+  if len(repuestos1) < len(repuestos2):
+    repuestomenor = repuestos1
+    repuestomayor = repuestos2
+  else:
+    repuestomenor = repuestos2
+    repuestomayor = repuestos1
+
+  maxim = []
+  for i in repuestomenor:
+    if i not in repuestomayor:
+      maxim.append(i)
+  print(len(maxim))
+
+cambiar_repuestos([3,5,7,10,15,16], [4,10,5,8])
+
